@@ -1,0 +1,26 @@
+extends ../layout.pug 
+
+block major 
+    br
+    .container.row
+        .col-6 
+            each n in notes
+                br
+                .card 
+                    .card-body 
+                        h5.card-title= n.title
+                        p.card-text= n.text 
+                        a.btn.btn-primary.btn-sm.m-2(href=`/note/${n._id}/delete`) Delete 
+                        a.btn.btn-secondary.btn-sm.m-2(href=`/update/${n._id}`) Update
+        .col-6
+            br
+            h4
+            form(action=`./`, method="post") 
+                .form-group 
+                    label.form-label(for="title") Title:
+                    input.form-control(type="text", name="title", placeholder='Title')
+                    br
+                    label.form-label(for="text") Text:
+                    textarea.form-control(type="text", name="text", placeholder='Text')
+                    br
+                button.btn.btn-secondary.btn-sm.m-2(type="submit") Submit

@@ -1,0 +1,15 @@
+extends ../layout.pug 
+
+block update
+    .container.row-6 
+        form(action=`./${note._id}`, method="post") 
+            .form.group 
+                label.form-label(for="title") Title :
+                input.form-control(type="text", name="title", value=`${note.title}`)
+                br
+                label.form-label(for="text") Text :
+                textarea.form-control(type="text", name="text")= `${note.text}`
+                br
+            button.btn.btn-primary.btn-sm(type="submit") Submit
+        .my-2
+            a.btn.btn-secondary.btn-sm(href="../") Back
