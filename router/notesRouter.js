@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { createNote, allNote, oneNote, updateNote, deleteNote } from '../controler/notesControl.js'
-import { schema, noteValidations } from "../controler/validations.js";
+import { createNote, allNote, oneNote, updateNote, deleteNote } from '../controller/notesControl.js'
+import { schema, noteValidations } from "../controller/validations.js";
 
 const noteRoutes = Router()
 

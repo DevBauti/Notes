@@ -28,9 +28,7 @@ export const allNote = async (req, res) => {
         let notes = await Note.find({}).lean()
         res.render('./includes/major.pug', { notes: notes })
     } catch (error) {
-        res.status(500).json({
-            message: 'Internal error'
-        })
+        res.render('./includes/major.pug', {notes: {title: 'Example title', text:'Example text'}})
     }
 }
 
